@@ -9,6 +9,7 @@ export class DateComponent implements OnInit {
 
 
   dateMessage:string;
+  somenumber:number=10;
   constructor() {
     setInterval(()=>{
       let currentDate=new Date();
@@ -20,4 +21,8 @@ export class DateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  addToNumber(a :number,b:number){
+    return a+b;
+  }
 }
