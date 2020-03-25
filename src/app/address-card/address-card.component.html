@@ -1,9 +1,15 @@
-<div>
-<h1>{{user.name}}</h1>
-<h3>{{user.title}}</h3>
-<p>{{user.address}}</p>
-<div *ngIf="user.phone.length">
+<div class ="address-card">
+<h1 class="name">{{user.name}}</h1>
+<h3 class="title">{{user.designation}}</h3>
+<span><button *ngIf="isCollapsed" (click)="toggleCollapse()">Expand</button></span>
+<span><button *ngIf="!isCollapsed"  (click)="toggleCollapse()">Collapse</button></span>
+
+<div *ngIf="!isCollapsed">
+<p class="address">{{user.address}}</p>
+<div class="phone" *ngIf="user.phone.length">
 <p>Phone:</p>
 <p *ngFor="let phoneNumber of user.phone">{{phoneNumber}}</p>
 </div>
+</div>
+
 </div>
